@@ -1,26 +1,28 @@
 import React, { Component } from 'react';
-import { StyleSheet } from 'react-native';
-import { Container, Button, Text } from 'native-base';
+import { StyleSheet, StatusBar } from 'react-native';
+import { Container, Button, Text, Content, Picker,  } from 'native-base';
+import * as Expo from 'expo';
 
-export default class App extends React.Component {
+import HomeScreen from "./src/Components/HomeScreen/index.js";
+export default class App extends Component {
+  constructor() {
+    super();
+    this.state = {
+      isReady: false
+    };
+  }
+  async componentWillMount() {
+    await Expo.Font.loadAsync({
+      Roboto: require("native-base/Fonts/Roboto.ttf"),
+      Roboto_medium: require("native-base/Fonts/Roboto_medium.ttf"),
+      Ionicons: require("native-base/Fonts/Ionicons.ttf")
+    });
+    this.setState({ isReady: true });
+  }
   render() {
-    return (
-      <Container>
-        <Button>
-          <Text>
-            Click Me
-          </Text>
-        </Button>
-      </Container>
-    );
+    if (!this.state.isReady) {
+      return <Expo.AppLoading />;
+    }
+    return <HomeScreen />;
   }
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
