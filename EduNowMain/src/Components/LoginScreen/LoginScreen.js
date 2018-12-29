@@ -1,5 +1,6 @@
+'use strict';
 import React, { Component } from "react";
-import { StatusBar } from "react-native";
+import { StatusBar, Image } from "react-native";
 import {
   Container,
   Header,
@@ -16,7 +17,8 @@ import {
   Form,
   Text
 } from "native-base";
-import styles from "./styles";
+import allAppImages from "../../Images/AppImages/AllAppImages.js";
+import styles from "../../Styles/styles.js";
 
 class LoginScreen extends Component {
 
@@ -24,14 +26,19 @@ class LoginScreen extends Component {
     return (
       <Container style={styles.container}>
       <StatusBar hidden />
-        <Header>
+        {/* <Header>
           <Body>
             <Title style={{alignSelf: "center"}}>Edu Now Login</Title>
           </Body>
-        </Header>
-
+        </Header> */}
         <Content>
           <Form>
+            <Content style={styles.header}>
+              <Image source={allAppImages['logo']} resizeMode="center" style={styles.logo}
+                      />
+               <Text style={styles.heading}>Edu Now</Text> 
+            </Content>
+
             <Item floatingLabel>
               <Label>Username</Label>
               <Input />
@@ -41,7 +48,7 @@ class LoginScreen extends Component {
               <Input secureTextEntry />
             </Item>
           </Form>
-          <Button block style={{ margin: 15, marginTop: 50 }}
+          <Button block success style={{ margin: 15, marginTop: 50 }}
           >
             <Text>Sign In</Text>
           </Button>

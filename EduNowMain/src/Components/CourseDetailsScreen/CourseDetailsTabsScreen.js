@@ -12,14 +12,20 @@ import {
   Title,
   Left,
   Icon,
-  Right
+  Right,
+  Tab,
+  Tabs,
+  ScrollableTab
 } from "native-base";
 import styles from "../../Styles/styles.js";
+import CourseDetailsScreen from "./CourseDetailsScreen.js";
+import Question from "../QuizScreen/Question.js";
 
-export default class HomeScreen extends React.Component {
+export default class CourseDetailsTabsScreen extends React.Component {
   render() {
     return (
-      <Container>
+        <Container>
+        <StatusBar hidden />
         <StatusBar hidden />
         <Header style={styles.screenHeader}>
           <Left>
@@ -31,26 +37,18 @@ export default class HomeScreen extends React.Component {
             </Button>
           </Left>
           <Body>
-            <Title style={[styles.alignCenter, styles.textWhite]}>Edu Now Home</Title>
+            <Title style={[styles.alignCenter, styles.textWhite]}>Course 1 Details</Title>
           </Body>
           <Right />
         </Header>
-        <Content padder>
-          <Card>
-            <CardItem>
-              <Body>
-                <Text>Lets learn something awesome today!</Text>
-              </Body>
-            </CardItem>
-          </Card>
-          <Card>
-            <CardItem>
-              <Body>
-              <Text>This is the home page of your truly fantastic app!!!</Text>
-              </Body>
-            </CardItem>
-          </Card>
-          </Content>
+          <Tabs renderTabBar={()=> <ScrollableTab />}>
+          <Tab warning heading="Course Details" style={styles.bgYellow}>
+            <CourseDetailsScreen />
+          </Tab>
+          <Tab heading="Take Exam">
+            <Question />
+          </Tab>
+        </Tabs>
       </Container>
     );
   }

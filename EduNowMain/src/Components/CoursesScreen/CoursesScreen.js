@@ -3,15 +3,16 @@ import { StatusBar, Image } from "react-native";
 import {Container, Header, Content, Card, CardItem, Thumbnail, Text, Button, Icon, Left, Body, Right, Title} from "native-base";
 import coverImages from '../../Images/CourseCoverImages/AllCoverImages.js'
 import thumbnails from '../../Images/ThumbNails/AllThumbNails.js';
+import styles from "../../Styles/styles.js";
 
 export default class CoursesScreen extends React.Component {
   render() {
     return (
       <Container>
         <StatusBar hidden />
-        <Header>
+        <Header style={styles.screenHeader}>
           <Left>
-            <Button
+            <Button light
               transparent
               onPress={() => this.props.navigation.navigate("DrawerOpen")}
             >
@@ -19,7 +20,7 @@ export default class CoursesScreen extends React.Component {
             </Button>
           </Left>
           <Body>
-            <Title>All Courses</Title>
+            <Title style={[styles.alignCenter, styles.textWhite]}>All Courses</Title>
           </Body>
           <Right />
         </Header>
@@ -29,8 +30,8 @@ export default class CoursesScreen extends React.Component {
               <Left>
                 <Thumbnail source={thumbnails['01']} />
                 <Body>
-                  <Text>Fantastic Course</Text>
-                  <Text note>I am fantastic</Text>
+                  <Text>Course 1</Text>
+                  <Text note>Course 1 tag</Text>
                 </Body>
               </Left>
             </CardItem>
@@ -39,7 +40,7 @@ export default class CoursesScreen extends React.Component {
             </CardItem>
             <CardItem>
                 <Body>
-                    <Button full dark>
+                    <Button block success>
                         <Text>Details</Text>
                     </Button>
                 </Body>
@@ -50,8 +51,8 @@ export default class CoursesScreen extends React.Component {
               <Left>
                 <Thumbnail source={thumbnails['02']} />
                 <Body>
-                  <Text>Amazing Course</Text>
-                  <Text note>This course is amazing</Text>
+                  <Text>Course 2</Text>
+                  <Text note>Course 2 tag</Text>
                 </Body>
               </Left>
             </CardItem>
@@ -60,7 +61,7 @@ export default class CoursesScreen extends React.Component {
             </CardItem>
             <CardItem>
                 <Body>
-                    <Button full dark>
+                    <Button block success>
                         <Text>Details</Text>
                     </Button>
                 </Body>

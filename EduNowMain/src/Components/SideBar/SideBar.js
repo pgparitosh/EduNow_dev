@@ -9,7 +9,15 @@ import {
   Content,
   Icon
 } from "native-base";
-const routes = ["Home", "Courses", "Login"];
+import allAppImages from "../../Images/AppImages/AllAppImages.js";
+import styles from "../../Styles/styles.js";
+
+const routes = [
+                {name: "Home", icon: "home"},
+                {name: "Courses", icon: "book"},
+                {name: "Login", icon: "lock"},
+                {name: "Details", icon: "info"}
+              ];
 export default class SideBar extends React.Component {
   render() {
     return (
@@ -36,10 +44,7 @@ export default class SideBar extends React.Component {
               alignSelf: "center",
               top: 20
             }}
-            source={{
-              uri:
-                "https://raw.githubusercontent.com/GeekyAnts/NativeBase-KitchenSink/master/assets/logo.png"
-            }}
+            source={allAppImages['sidebar']}
           />
           <List
             dataArray={routes}
@@ -48,9 +53,10 @@ export default class SideBar extends React.Component {
               return (
                 <ListItem
                   button
-                  onPress={() => this.props.navigation.navigate(data)}
+                  onPress={() => this.props.navigation.navigate(data.name)}
                 >
-                  <Text>{data}</Text>
+                  <Icon type="FontAwesome" name={data.icon} style={styles.textGreen} />
+                  <Text>   {data.name}</Text>
                 </ListItem>
               );
             }}
