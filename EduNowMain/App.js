@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
-import { StyleSheet, StatusBar } from 'react-native';
-import { Container, Button, Text, Content, Picker,  } from 'native-base';
 import * as Expo from 'expo';
+import HomeScreen from "./src/Screens/index.js";
 
-import HomeScreen from "./src/Components/HomeScreen/index.js";
 export default class App extends Component {
   constructor() {
     super();

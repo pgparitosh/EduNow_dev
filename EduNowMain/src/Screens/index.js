@@ -1,10 +1,10 @@
-import React, { Component } from "react";
+import React from "react";
+import { createDrawerNavigator, createAppContainer } from "react-navigation";
 import HomeScreen from "./HomeScreen.js";
-import SideBar from "../SideBar/SideBar.js";
-import CoursesScreen from "../CoursesScreen/CoursesScreen.js";
-import LoginScreen from "../LoginScreen/LoginScreen.js";
-import CourseDetailsTabsScreen from "../CourseDetailsScreen/CourseDetailsTabsScreen.js";
-import { createDrawerNavigator,createAppContainer } from "react-navigation";
+import SideBar from "../Components/SideBar.js";
+import CoursesScreen from "./CoursesScreen.js";
+import LoginScreen from "./LoginScreen.js";
+import CourseDetailsTabsScreen from "./CourseDetailsTabsScreen.js";
 
 const HomeScreenRouter = createDrawerNavigator(
   {

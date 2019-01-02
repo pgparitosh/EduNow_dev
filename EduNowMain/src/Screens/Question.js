@@ -1,8 +1,8 @@
-import React, { Component } from "react";
+import React from "react";
 import { Image } from "react-native";
 import { Content, ListItem, Body, Button, CheckBox, Text } from "native-base";
-import styles from "../../Styles/styles.js";
-import allAppImages from "../../Images/AppImages/AllAppImages.js";
+import styles from "../Styles/styles.js";
+import allAppImages from "../Images/AppImages/AllAppImages.js";
 
 let arrnew = [];
 const jsonData = {

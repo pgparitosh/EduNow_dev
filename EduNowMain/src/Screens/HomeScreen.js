@@ -1,40 +1,22 @@
 import React from "react";
 import { StatusBar } from "react-native";
 import {
-  Button,
   Text,
   Container,
   Card,
   CardItem,
   Body,
-  Content,
-  Header,
-  Title,
-  Left,
-  Icon,
-  Right
+  Content
 } from "native-base";
-import styles from "../../Styles/styles.js";
+import styles from "../Styles/styles.js";
+import HeaderComponent from "../Components/Header.js";
 
 export default class HomeScreen extends React.Component {
   render() {
     return (
       <Container>
         <StatusBar hidden />
-        <Header style={styles.screenHeader}>
-          <Left>
-            <Button light
-              transparent
-              onPress={() => this.props.navigation.navigate("DrawerOpen")}
-            >
-              <Icon name="menu" />
-            </Button>
-          </Left>
-          <Body>
-            <Title style={[styles.alignCenter, styles.textWhite]}>Edu Now Home</Title>
-          </Body>
-          <Right />
-        </Header>
+        <HeaderComponent headerMessage="Edu Now Home" navigation={this.props.navigation} />
         <Content padder>
           <Card>
             <CardItem>

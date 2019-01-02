@@ -1,7 +1,6 @@
 import React from "react";
-import { AppRegistry, Image, StatusBar } from "react-native";
+import { Image } from "react-native";
 import {
-  Button,
   Text,
   Container,
   List,
@@ -9,8 +8,8 @@ import {
   Content,
   Icon
 } from "native-base";
-import allAppImages from "../../Images/AppImages/AllAppImages.js";
-import styles from "../../Styles/styles.js";
+import allAppImages from "../Images/AppImages/AllAppImages.js";
+import styles from "../Styles/styles.js";
 
 const routes = [
                 {name: "Home", icon: "home"},
@@ -19,6 +18,11 @@ const routes = [
                 {name: "Details", icon: "info"}
               ];
 export default class SideBar extends React.Component {
+
+  constructor(props) {
+    super(props);
+  }
+
   render() {
     return (
       <Container>
